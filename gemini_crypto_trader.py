@@ -440,7 +440,7 @@ auth = HTTPBasicAuth()
 
 # Configure users (in production, store these securely)
 users = {
-    "admin": generate_password_hash(os.getenv("DASHBOARD_PASSWORD", "9026665756"))
+    "admin": generate_password_hash(os.getenv("DASHBOARD_PASSWORD", "admin"))
 }
 
 @auth.verify_password
