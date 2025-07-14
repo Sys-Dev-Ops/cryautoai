@@ -1,0 +1,16 @@
+[Unit]
+Description=ami Trader Bot Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/bingx_gpt_bot
+ExecStart=/home/ubuntu/bingx_gpt_bot/run_script.sh
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/ubuntu/bingx_gpt_bot/logs/bot.out.log
+StandardError=append:/home/ubuntu/bingx_gpt_bot/logs/bot.err.log
+Environment="PATH=/home/ubuntu/bingx_gpt_bot/venv/bin:/usr/bin:/bin"
+
+[Install]
+WantedBy=multi-user.target
